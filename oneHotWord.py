@@ -11,11 +11,13 @@ for s in sentences:
 
 max_len = 10
 
-res = np.zeros(shape=(len(sentences),
+res = np.zeros(shape=(len(s),
     max_len,
     max(token_index.values()) + 1)) 
 
-for i, sentence in enumerate(sentences):
+for i, s in enumerate(sentences):
+    print(i, s)
     for j, word in list(enumerate(s.split()))[:max_len]:
+        print(i, word)
         index = token_index.get(word)
         res[i,j,index] = 1
